@@ -1,0 +1,289 @@
+html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio UHS - Nowoczesna Strona</title>
+    <!-- Import eleganckiej czcionki z Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET I PODSTAWOWE STYLE (Stylistyka Canva-like) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf9f6; /* Ciepła, nowoczesna biel */
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAWIGACJA */
+        header {
+            background-color: rgba(251, 249, 246, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #7052ff; /* Akcent kolorystyczny */
+        }
+
+        /* SEKCJA GŁÓWNA (HERO) */
+        .hero {
+            padding: 180px 0 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at 90% 10%, rgba(112, 82, 255, 0.05) 0%, transparent 40%);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background-color: #7052ff;
+            transform: translateY(-2px);
+        }
+
+        /* SEKCJA O NAS / USŁUGI */
+        .features {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 11fr));
+            gap: 40px;
+        }
+        .card {
+            background-color: #faf9f6;
+            padding: 40px;
+            border-radius: 24px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .card p {
+            color: #666;
+        }
+
+        /* SEKCJA KONTAKTU */
+        .contact {
+            padding: 100px 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background-color: #faf9f6;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #7052ff;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #7052ff;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #1a1a1a;
+        }
+
+        /* STOPKA */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer p {
+            opacity: 0.6;
+        }
+
+        /* RESPONSYWNOŚĆ (TELEFONY) */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Uproszczenie na mobile */
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAWIGACJA -->
+    <header>
+        <div class="container nav">
+            <a href="#" class="logo">STUDIO UHS</a>
+            <ul class="nav-links">
+                <li><a href="#o-nas">O nas</a></li>
+                <li><a href="#oferta">Oferta</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- SEKCJA GŁÓWNA (HERO) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Kreatywne pomysły<br>zmieniamy w rzeczywistość</h1>
+            <p>Tworzymy nowoczesne projekty, które wyróżniają się w sieci. Prosto, estetycznie i z pomysłem – dokładnie tak, jak w kreatorach Canva.</p>
+            <a href="#kontakt" class="btn">Rozpocznij projekt</a>
+        </div>
+    </section>
+
+    <!-- SEKCJA OFERTY / KAFELKI -->
+    <section id="oferta" class="features">
+        <div class="container">
+            <h2 class="section-title">Co robimy?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>01. Branding</h3>
+                    <p>Identyfikacja wizualna, która zapada w pamięć. Logo, dobór kolorów i pełna spójność Twojej marki.</p>
+                </div>
+                <div class="card">
+                    <h3>02. Web Design</h3>
+                    <p>Projektowanie nowoczesnych stron internetowych nastawionych na wrażenia użytkownika (UX/UI).</p>
+                </div>
+                <div class="card">
+                    <h3>03. Social Media</h3>
+                    <p>Kreowanie unikalnych grafik i szablonów na platformy społecznościowe, które przyciągają uwagę.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCJA KONTAKTOWA -->
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <h2 class="section-title">Napisz do nas</h2>
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="alert('Wiadomość została wysłana! (Makieta działania)'); return false;">
+                    <div class="form-group">
+                        <label for="name">Imię lub nazwa firmy</label>
+                        <input type="text" id="name" required placeholder="np. Jan Kowalski">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adres e-mail</label>
+                        <input type="email" id="email" required placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message" rows="5" required placeholder="Opisz krótko swój projekt..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Wyślij formularz</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- STOPKA -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Studio UHS. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
